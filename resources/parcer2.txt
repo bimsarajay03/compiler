@@ -1,0 +1,64 @@
+BNF Grammar - Implementated
+=====================================
+
+<program> ::= <stmt_list>
+
+<stmt_list> ::= <stmt> <stmt_list>
+              | <stmt>
+
+<stmt> ::= <decl>
+         | <assign>
+         | <built_in_call>
+
+<decl> ::= <type> <identifier> ";"
+         | <type> <identifier> "=" <expr> ";"
+
+<assign> ::= <identifier> "=" <expr> ";"
+
+<built_in_call> ::= <built_in_name> "(" <expr> ")" ";"
+
+<built_in_name> ::= "print"
+                  | (other built-in functions can be added here)
+
+<type> ::= "int"
+         | "float"
+
+<expr> ::= <term> { "+" <term> }*
+
+<term> ::= <number>
+         | <identifier>
+         | "(" <expr> ")"
+
+<identifier> ::= IDENTIFIER_TOKEN
+
+<number> ::= NUMBER_TOKEN
+
+
+Token Definitions (Lexer Level)
+================================
+
+IDENTIFIER_TOKEN ::= <letter> { <letter_or_digit> }*
+
+NUMBER_TOKEN ::= <digit>+ ( "." <digit>+ )?
+
+<letter_or_digit> ::= <letter> | <digit>
+
+<letter> ::= "a" | "b" | "c" | "d" | "e" | "f" | "g" | "h" | "i" | "j"
+          | "k" | "l" | "m" | "n" | "o" | "p" | "q" | "r" | "s" | "t"
+          | "u" | "v" | "w" | "x" | "y" | "z"
+          | "A" | "B" | "C" | "D" | "E" | "F" | "G" | "H" | "I" | "J"
+          | "K" | "L" | "M" | "N" | "O" | "P" | "Q" | "R" | "S" | "T"
+          | "U" | "V" | "W" | "X" | "Y" | "Z"
+          | "_"
+
+<digit> ::= "0" | "1" | "2" | "3" | "4" | "5" | "6" | "7" | "8" | "9"
+
+
+Notes
+=====
+
+1. The { }* notation indicates zero or more repetitions (Kleene star)
+2. The { }+ notation indicates one or more repetitions
+3. Declaration supports optional initialization with assignment
+4. Expression uses iterative left-associative parsing for addition
+5. Lexer handles token recognition, parser works on token stream

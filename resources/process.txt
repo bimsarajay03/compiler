@@ -1,0 +1,17 @@
+Source Code
+   ↓
+Lexical Analysis (Lexer)
+   ↓
+Syntax Analysis (Parser)
+   ↓
+Abstract Syntax Tree (AST)
+   ↓
+Semantic Analysis
+   ↓
+Intermediate Representation (IR)
+   ↓
+Optimization Passes
+   ↓
+Code Generation
+   ↓
+Assembly / Machine Code
