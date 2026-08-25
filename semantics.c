@@ -95,7 +95,7 @@ static const char* analyze_term(ASTNode *node){
     return NULL;
 }
 
-// Handle arithmetic expressions: +, -, *, /
+// Handle arithmetic expressions: + /
 static const char* analyze_arithmetic_expr(const char *leftType, const char *rightType, const char *op){
     // int op int = int
     if(strcmp(leftType, "int") == 0 && strcmp(rightType, "int") == 0){

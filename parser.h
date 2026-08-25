@@ -17,7 +17,7 @@ typedef enum {
 // AST Node Structure
 typedef struct ASTNode {
     ASTNodeType nodeType;
-    TokenType tokenType;       // Original token type from lexer
+    TokenType tokenType;                  // Original token type from lexer
     char value[MAX_LEN];
     struct ASTNode *left;
     struct ASTNode *right;

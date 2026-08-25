@@ -1,4 +1,4 @@
-The parser in implemented by a recursive decent(function stack) PDA
+
 parse_program()
 ├── parse_stmt_list()
     ├── parse_stmt()

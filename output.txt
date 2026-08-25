@@ -1,0 +1,47 @@
+KEYWORD: int
+IDENTIFIER: y
+OPERATOR: =
+NUMBER: 10
+SYMBOL: ;
+KEYWORD: int
+IDENTIFIER: x
+OPERATOR: =
+NUMBER: 20
+SYMBOL: ;
+KEYWORD: int
+IDENTIFIER: z
+OPERATOR: =
+IDENTIFIER: x
+OPERATOR: +
+IDENTIFIER: y
+SYMBOL: ;
+BUILT_FUNCTION: print
+SYMBOL: (
+IDENTIFIER: z
+SYMBOL: )
+SYMBOL: ;
+
+
+Program
+├── Declaration: int
+│   ├── Term: y
+│   └── Term: 10
+├── Declaration: int
+│   ├── Term: x
+│   └── Term: 20
+├── Declaration: int
+│   ├── Term: z
+│   └── Expression: +
+│       ├── Term: x
+│       └── Term: y
+└── Built-in Call: print()
+    └── Term: z
+
+Name            Type       Initialized  Scope    Line    
+─────────────────────────────────────────────────────────────────
+y               int        Yes          0        1       
+x               int        Yes          0        2       
+z               int        Yes          0        3       
+
+30
+
